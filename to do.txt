@@ -1,8 +1,20 @@
-backup to GitHub
+Make one example project page (android app):
+	skip card container?
+	put all the stuff there, make it pretty later
+tidy up styles.css: 
+
+pretty up portfolio pages
+	tracklog animator
+	battery tester
+	REA
+
+work page?
+
 make 1 simple tool (pressure drop)
 make calculators into grid view
 
 
-
+make about page with image and cv
 
 p5.js is not necessary
+about + portfolio one page?
