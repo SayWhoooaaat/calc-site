@@ -22,23 +22,39 @@
     <main class="content">
       <h1>Tracklog Animator</h1>
 
-      <div class="card">
-        <img src="../img/projects/tracklog-animator.png" alt="Tracklog Animator preview" style="width:100%; height:auto; border-radius:6px; margin-bottom:1rem;">
+      <p>
+        I coded a program that takes a paragliding tracklog with gps coordinates, and turns it into an animation. That video can then be overlaid on recorded video to show live-location and altitude. 
+      </p>
 
-        <p>Short overview of what it does, why you made it, and what tech you used.</p>
-
-        <h2>What it does</h2>
-        <p>Describe how it takes paragliding GPS tracks and turns them into animations…</p>
-
-        <h2>Tech</h2>
-        <ul>
-          <li>Language / framework</li>
-          <li>Tools used</li>
-        </ul>
-
-        <!-- Optional link to code/demo -->
-        <!-- <p><a href="https://github.com/..." target="_blank" rel="noopener">View code on GitHub</a></p> -->
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/p65YFcXJj4s"
+          title="Tracklog Animator demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
       </div>
+
+      <p>
+        The animation visualizes data that helps the viewer keep oriented; like position, path flown, current direction, distance flown and distance to goal: 
+      </p>
+
+      <img src="../img/projects/tranim4.png" alt="Tracklog Animator preview" style="border-radius:6px; margin-bottom:1rem;">
+
+      <p>
+        It also shows altitude. On the below example 900 is the ground elevation above sea level, 1770 m is the pilots altitude above sea level, and 2 m/s tells us the pilot is in a vertical wind, causing him to rise upwards at 2 m/s instead of decending. 
+      </p>
+
+      <img src="../img/projects/tranim2.png" alt="Tracklog Animator preview" style="border-radius:6px; margin-bottom:1rem;">
+
+      <p>
+        Lastly it shows a country map to give geographical context, plus date and time. 
+      </p>
+
+      <img src="../img/projects/tranim5.png" alt="Tracklog Animator preview" style="border-radius:6px; margin-bottom:1rem;">
+
     </main>
   </div>
 </body>
