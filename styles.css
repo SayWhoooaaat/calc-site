@@ -285,12 +285,31 @@ p {
 .wrap {
   display: flex;
   gap: 16px; /* spacing between image + text */
-  align-items: flex-start;
+  /*align-items: flex-start;*/
+  align-items: center;
   margin: 20px 0;
 }
 
-.side-text {
+.wrap--reverse {
+  flex-direction: row-reverse;
+}
+
+.wrap p {
   flex: 1; /* fill remaining width */
   margin: 0;
   min-width: 0; /* important so long text can wrap instead of overflow */
+}
+
+.wrap img {
+  /*height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  object-fit: cover;*/
+}
+
+@media (max-width: 460px) {
+  .wrap,
+  .wrap--reverse {
+    flex-direction: column;
+  }
 }

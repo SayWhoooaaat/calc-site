@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Portfolio - framstad.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="layout">
-    <nav class="nav">
-      <div class="nav-title">
-        <a href="index.html">framstad.org</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Calculators</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio - framstad.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <nav class="nav">
+        <div class="nav-title">
+          <a href="index.html">framstad.org</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Calculators</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
 
-    <main class="content">
-      <h1>Portfolio</h1>
-      <p>Some things I’ve built and done.</p>
+      <main class="content">
+        <h1>Portfolio</h1>
+        <p>Some things I’ve built and done.</p>
 
-      <section class="projects-grid">
+        <section class="projects-grid">
+          <a href="projects/tracklog-animator.html" class="card project-card">
+            <img
+              src="img/projects/tracklog-animator.png"
+              alt="Tracklog Animator preview"
+            />
+            <h2>Tracklog Animator</h2>
+            <p>Program that turns paragliding GPS tracklogs into animations.</p>
+          </a>
 
-        <a href="projects/tracklog-animator.html" class="card project-card">
-          <img src="img/projects/tracklog-animator.png" alt="Tracklog Animator preview">
-          <h2>Tracklog Animator</h2>
-          <p>Program that turns paragliding GPS tracklogs into animations.</p>
-        </a>
+          <a href="projects/android-app.html" class="card project-card">
+            <img
+              src="img/projects/android-app.png"
+              alt="Android app screenshot"
+            />
+            <h2>Android app</h2>
+            <p>
+              Tier list app for Android, published on Google Play (80 000+
+              downloads).
+            </p>
+          </a>
 
-        <a href="projects/android-app.html" class="card project-card">
-          <img src="img/projects/android-app.png" alt="Android app screenshot">
-          <h2>Android app</h2>
-          <p>Tier list app for Android, published on Google Play (80 000+ downloads).</p>
-        </a>
-
-        <a href="projects/battery-tester.html" class="card project-card">
-          <img src="img/projects/battery-tester.jpg" alt="Battery Tester Image">
-          <h2>Battery tester</h2>
-          <p>Machine for logging capacity of battery cells.</p>
-        </a>
-
-        <!-- Add more projects here the same way -->
-
-      </section>
-    </main>
-
-  </div>
-</body>
+          <a href="projects/battery-tester.html" class="card project-card">
+            <img
+              src="img/projects/battery-tester.jpg"
+              alt="Battery Tester Image"
+            />
+            <h2>Battery tester</h2>
+            <p>Machine for logging capacity of battery cells.</p>
+          </a>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
