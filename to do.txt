@@ -1,11 +1,11 @@
 
 
-finish portfolio pages:
-	planter
-
 work page:
-	cards with: year, temp, etc
-	HTE, nordic biochar, speira
+me VS others split
+Logo where?
+
+
+finish planter page
 
 Redesign everything:
 	hide calculators
