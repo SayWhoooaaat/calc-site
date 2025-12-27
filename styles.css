@@ -291,6 +291,10 @@ p {
 }
 
 .wrap--reverse {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 20px 0;
   flex-direction: row-reverse;
 }
 
@@ -312,4 +316,13 @@ p {
   .wrap--reverse {
     flex-direction: column;
   }
+}
+
+.project-video {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 6px;
 }

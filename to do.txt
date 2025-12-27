@@ -1,18 +1,22 @@
-Make one example project page (android app):
-	skip card container?
-	put all the stuff there, make it pretty later
-tidy up styles.css: 
 
-pretty up portfolio pages
-	tracklog animator
-	battery tester
-	REA
 
-work page?
+finish portfolio pages:
+	planter
 
+work page:
+	cards with: year, temp, etc
+	HTE, nordic biochar, speira
+
+Redesign everything:
+	hide calculators
+	sidebar shows projects and about furthest down(?)
+	narrow screen: projects & about
+	
+
+
+OLD:
 make 1 simple tool (pressure drop)
 make calculators into grid view
-
 
 make about page with image and cv
 
