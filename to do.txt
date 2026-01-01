@@ -1,18 +1,20 @@
+Work pages double indentation
+
 
 hte
 belt
 chamber
 
+GitHub pages
+domain
 
-Redesign everything:
-	hide calculators
-	sidebar shows projects and about furthest down(?)
-	narrow screen: projects & about
 	
 Later:
+work show up on top phone?
 Speira
 Weld certification
 Link to terra preta
+link adafruit
 
 OLD:
 make 1 simple tool (pressure drop)
