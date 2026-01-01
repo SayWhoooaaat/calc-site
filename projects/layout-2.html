@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Battery Tester - framstad.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles2.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <nav class="nav">
+        <div class="nav-title">
+          <a href="../index.html">framstad.org</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Calculators</a></li>
+          <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+
+      <main class="content">
+        <h1>Battery Tester v2</h1>
+
+        <p>
+          Lithium Ion batteries of type 18650 are commonly found in old laptop
+          batteries, so they can be aquired for free at recycling stations.
+          However, old cells can be bad, so I built a battery tester that
+          measures the quality of cells.
+        </p>
+
+        <section class="story-grid">
+          <article class="story-card">
+            <img
+              src="../img/projects/battery-tester.JPG"
+              alt="Step 1 description"
+              loading="lazy"
+            />
+            <div class="story-text">
+              <p>
+                Up to 10 cells can be put on the loading side. The machine loads
+                one cell at a time, discharge it, charge it back up, logs the
+                capacity and internal resistance, and loads a new cell
+                automatically.
+              </p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img
+              src="../img/projects/bt4.JPG"
+              alt="Step 2 description"
+              loading="lazy"
+            />
+            <div class="story-text">
+              <p>
+                The bad cells were discarded, while the good cells were
+                optimally arranged in a pack acording to each cells remaining
+                capacity.
+              </p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img
+              src="../img/projects/bt3.JPG"
+              alt="Step 2 description"
+              loading="lazy"
+            />
+            <div class="story-text">
+              <p>
+                Each cell can be inspected more closely. On this graph we see
+                the energy content VS cell voltage in blue, and the internal
+                resistance VS cell voltage in green.
+              </p>
+            </div>
+          </article>
+
+          <article class="story-card">
+            <img
+              src="../img/projects/bt5.JPG"
+              alt="Step 2 description"
+              loading="lazy"
+            />
+            <div class="story-text">
+              <p>
+                I used these cells to make my own electric longboard. I used my
+                phone as the throttle by coding an app. It sent the throttle
+                signal to a bluetooth module on the longboard.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <video class="project-video" controls preload="metadata" playsinline>
+          <source src="../img/projects/bt8.mp4" type="video/mp4" />
+          Sorry—your browser can’t play this video.
+        </video>
+
+        <p>
+          Even though it looks like shit, it taught me the basics of
+          electronics, soldering, app development, and arduino. I used it as my
+          commute to work one summer.
+        </p>
+
+        <img
+          src="../img/projects/bt7.jpg"
+          alt="Longboard Picture"
+          style="border-radius: 6px; margin-bottom: 1rem; width: 100%"
+        />
+      </main>
+    </div>
+  </body>
+</html>

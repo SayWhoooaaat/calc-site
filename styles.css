@@ -196,8 +196,8 @@ p {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 1rem;
+  margin: 1rem auto 2rem;
 }
 
 /* Make cards clickable, full-height */
@@ -328,4 +328,70 @@ p {
   display: block;
   margin: 0 auto 1rem;
   border-radius: 6px;
+}
+
+.two-col {
+  display: flex;
+  gap: 24px; /* space between columns */
+  align-items: flex-start;
+  margin: 1rem;
+}
+
+.col {
+  flex: 1; /* both columns share width equally */
+  min-width: 0; /* prevents overflow issues */
+}
+
+.list > div {
+  margin: 6px 0;
+}
+
+/* Work projects */
+
+.project-card {
+  background: #fff;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: hidden; /* keeps badge nicely clipped if it touches edges */
+}
+
+.card-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.project-title {
+  margin: 0;
+}
+
+/* Main image styling example */
+.project-main-image {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+.project-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.company-badge.corner {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 120px;
+  display: block;
+  background: transparent;
+  border: none;
+  object-fit: contain;
 }

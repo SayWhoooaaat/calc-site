@@ -1,19 +1,18 @@
 
+hte
+belt
+chamber
 
-work page:
-me VS others split
-Logo where?
-hte, pyrolysis, Celikel, speira, sintef raufoss, sert
-
-
-finish planter page
 
 Redesign everything:
 	hide calculators
 	sidebar shows projects and about furthest down(?)
 	narrow screen: projects & about
 	
-
+Later:
+Speira
+Weld certification
+Link to terra preta
 
 OLD:
 make 1 simple tool (pressure drop)
