@@ -1,9 +1,9 @@
-Work pages double indentation
-
+Sidebar not scrollable
 
 hte
 belt
 chamber
+sort projects
 
 GitHub pages
 domain

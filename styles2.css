@@ -157,6 +157,12 @@ p {
   padding-left: 14px; /* indent */
 }
 
+.desktop-only-2 {
+  display: list-item;
+  margin: 6px 0 0;
+  padding-left: 28px; /* indent */
+}
+
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
@@ -182,6 +188,10 @@ p {
   }
 
   .desktop-only {
+    display: none;
+  }
+
+  .desktop-only-2 {
     display: none;
   }
 
