@@ -1,77 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Resistance wire length - framstad.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resistance wire length - framstad.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- global site styles -->
-  <link rel="stylesheet" href="../../styles.css">
+    <!-- global site styles -->
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
 
-</head>
+  <body>
+    <div class="layout">
+      <nav class="nav">
+        <div class="nav-title">
+          <a href="../../index.html">framstad.org</a>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="../../calculators.html" class="active">Calculators</a>
+          </li>
+          <li><a href="../../index.html">Portfolio</a></li>
+          <li><a href="../../about.html">About</a></li>
+        </ul>
+      </nav>
 
-<body>
-  <div class="layout">
-    <nav class="nav">
-      <div class="nav-title">
-        <a href="../../index.html">framstad.org</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../../index.html" class="active">Calculators</a></li>
-        <li><a href="../../portfolio.html">Portfolio</a></li>
-        <li><a href="../../about.html">About</a></li>
-      </ul>
-    </nav>
+      <main class="content content--full">
+        <h1>Resistance wire length calculator</h1>
+        <p>
+          Tool for calculating the correct length of resistance heating wire.
+        </p>
 
-    <main class="content content--full">
-      <h1>Resistance wire length calculator</h1>
-      <p>Tool for calculating the correct length of resistance heating wire.</p>
+        <iframe src="app.html" class="tool-frame" loading="lazy"></iframe>
+      </main>
+    </div>
 
-      <iframe
-        src="app.html"
-        class="tool-frame"
-        loading="lazy"
-      ></iframe>
-    </main>
-  </div>
+    <script>
+      function resizeToolFrame() {
+        const iframe = document.querySelector(".tool-frame");
+        if (!iframe) return;
 
-<script>
-  function resizeToolFrame() {
-    const iframe = document.querySelector(".tool-frame");
-    if (!iframe) return;
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (!doc) return;
 
-    const doc = iframe.contentDocument || iframe.contentWindow.document;
-    if (!doc) return;
+        const newHeight = Math.max(
+          doc.body ? doc.body.scrollHeight : 0,
+          doc.documentElement ? doc.documentElement.scrollHeight : 0
+        );
 
-    const newHeight = Math.max(
-      doc.body ? doc.body.scrollHeight : 0,
-      doc.documentElement ? doc.documentElement.scrollHeight : 0
-    );
+        if (newHeight) {
+          iframe.style.height = newHeight + "px";
+        }
+      }
 
-    if (newHeight) {
-      iframe.style.height = newHeight + "px";
-    }
-  }
+      // Run as soon as the DOM is ready, not waiting for all resources
+      document.addEventListener("DOMContentLoaded", () => {
+        const iframe = document.querySelector(".tool-frame");
+        if (!iframe) return;
 
-  // Run as soon as the DOM is ready, not waiting for all resources
-  document.addEventListener("DOMContentLoaded", () => {
-    const iframe = document.querySelector(".tool-frame");
-    if (!iframe) return;
+        // When the iframe finishes loading, resize it
+        iframe.addEventListener("load", () => {
+          // one immediate resize
+          resizeToolFrame();
+          // and a couple of delayed ones in case the inner page grows
+          setTimeout(resizeToolFrame, 100);
+          setTimeout(resizeToolFrame, 500);
+        });
+      });
 
-    // When the iframe finishes loading, resize it
-    iframe.addEventListener("load", () => {
-      // one immediate resize
-      resizeToolFrame();
-      // and a couple of delayed ones in case the inner page grows
-      setTimeout(resizeToolFrame, 100);
-      setTimeout(resizeToolFrame, 500);
-    });
-  });
-
-  // Also resize when the window size changes
-  window.addEventListener("resize", resizeToolFrame);
-</script>
-
-
-</body>
+      // Also resize when the window size changes
+      window.addEventListener("resize", resizeToolFrame);
+    </script>
+  </body>
 </html>
