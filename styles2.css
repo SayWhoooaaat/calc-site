@@ -122,6 +122,12 @@ p {
   padding: 1.5rem 1rem;
   border-right: 1px solid #ddd;
   min-width: 220px;
+
+  position: sticky;
+  top: 0; /* or 1rem if you want some spacing from the top */
+  align-self: flex-start; /* important if .layout is display:flex */
+  height: 100vh; /* optional: make it fill the viewport */
+  overflow-y: auto; /* optional: only scroll nav if it ever overflows */
 }
 
 .nav-title {
@@ -176,6 +182,10 @@ p {
     border-right: none;
     border-bottom: 1px solid #ddd;
     padding: 0.8rem 1rem;
+
+    position: static;
+    height: auto;
+    overflow: visible;
   }
 
   .nav-links {
