@@ -1,6 +1,3 @@
-hte
-belt
-chamber
 sort projects
 
 GitHub pages
