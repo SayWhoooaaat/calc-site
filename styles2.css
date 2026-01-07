@@ -403,3 +403,18 @@ p {
   border-radius: 6px;
   border: 1px solid #ddd;
 }
+
+.ext-link {
+  color: #1a5fb4;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+.ext-link:hover {
+  text-decoration-thickness: 0.13em;
+}
+.ext-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
