@@ -1,114 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Battery Tester - framstad.org</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/styles2.css" />
+    <title>Battery tester · framstad.org</title>
+    <meta
+      name="description"
+      content="An automated tester that measures capacity and internal resistance of salvaged 18650 cells."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../site.js"></script>
   </head>
   <body>
-    <div class="layout">
-      <nav class="nav">
-        <div class="nav-title">
-          <a href="/">framstad.org</a>
-        </div>
-        <ul class="nav-links">
-          <li><a href="/calculators/">Calculators</a></li>
-          <li><a href="/">Portfolio</a></li>
-          <li class="desktop-only">
-            <a href="/projects/tracklog-animator/">Tracklog Animator</a>
-          </li>
-          <li class="desktop-only">
-            <a href="/work/">Professional Work</a>
-          </li>
-          <li class="desktop-only">
-            <a href="/projects/android-app/">Android App</a>
-          </li>
-          <li class="desktop-only">
-            <a href="/projects/battery-tester/" class="active"
-              >Battery Tester</a
-            >
-          </li>
-          <li class="desktop-only">
-            <a href="/projects/auto-planter/">Self-Watering Planter</a>
-          </li>
-          <li><a href="/about/">About</a></li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <div class="container container--narrow">
+        <a class="brand" href="../../">framstad.org</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="../../about/">About</a>
+          <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.7 14.6A8.5 8.5 0 0 1 9.4 3.3a8.5 8.5 0 1 0 11.3 11.3z" /></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+          </button>
+        </nav>
+      </div>
+    </header>
 
-      <main class="content">
-        <h1>Battery Tester</h1>
+    <main class="container container--narrow">
+      <a class="back-link" href="../../">← framstad.org</a>
 
-        <p>
-          Lithium-ion 18650 cells are commonly found in old laptop batteries, so
-          you can often get them for free at recycling stations. But older cells
-          can be degraded, so I built a battery tester that measures cell
-          health.
+      <header class="project-header prose">
+        <p class="eyebrow">2017</p>
+        <h1>Battery tester</h1>
+        <p class="lead">
+          Lithium-ion 18650 cells are common in old laptop batteries, so you
+          can often get them for free at recycling stations. Older cells can be
+          worn out, so I built a machine that measures the health of each one.
         </p>
+      </header>
 
-        <div class="wrap">
-          <p>
-            Up to 10 cells can be placed on the loading side. The machine feeds
-            one cell at a time, discharges it, charges it back up, logs capacity
-            and internal resistance, then loads the next cell automatically.
-          </p>
-          <img
-            src="/img/projects/battery-tester-r.jpg"
-            alt="Battery Tester Picture"
-            style="width: 260px"
-          />
-        </div>
-
-        <div class="wrap--reverse">
-          <p>
-            Bad cells were discarded. The good ones were arranged into a pack
-            based on each cell's remaining capacity.
-          </p>
-          <img src="/img/projects/bt4-r.jpg" alt="Cells" style="width: 250px" />
-        </div>
-
-        <div class="wrap">
-          <p>
-            Each cell can also be inspected in detail. This graph shows energy
-            vs. voltage (blue) and internal resistance vs. voltage (green).
-          </p>
-          <img
-            src="/img/projects/bt3.jpg"
-            alt="Energy curve"
-            style="width: 250px"
-          />
-        </div>
-
-        <div class="wrap--reverse">
-          <p>
-            I used the good cells to build an electric longboard. I coded a
-            phone app as the throttle, sending the signal to a Bluetooth module
-            on the board.
-          </p>
-          <img
-            src="/img/projects/bt5.jpg"
-            alt="BAttery pack assembly"
-            style="width: 260px"
-          />
-        </div>
-
-        <video class="project-video" controls preload="metadata" playsinline>
-          <source src="/img/projects/bt8.mp4" type="video/mp4" />
-          Sorry—your browser can't play this video.
-        </video>
-
-        <p>
-          It looks like shit, but it taught me the basics of electronics,
-          soldering, app development, and Arduino. I used it to commute to work
-          for one summer.
-        </p>
-
+      <figure class="figure">
         <img
-          src="/img/projects/bt7-r.jpg"
-          alt="Longboard Picture"
-          style="border-radius: 6px; margin-bottom: 1rem; width: 100%"
+          src="../../img/battery-tester.webp"
+          alt="The battery tester with a cell loaded"
+          width="1400"
+          height="1050"
         />
-      </main>
-    </div>
+        <figcaption>Up to 10 cells go on the loading side.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>
+          The machine feeds in one cell at a time, discharges it, charges it
+          back up and logs its capacity and internal resistance. Then it loads
+          the next cell automatically.
+        </p>
+        <p>
+          Bad cells were discarded. The good ones were grouped into a pack
+          based on how much capacity each had left.
+        </p>
+      </div>
+
+      <div class="figure-row">
+        <figure>
+          <img
+            src="../../img/bt-cells.webp"
+            alt="Tested cells with their capacity written on them"
+            width="900"
+            height="1200"
+            loading="lazy"
+          />
+          <figcaption>Tested cells, marked with their capacity.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../img/bt-graph.webp"
+            alt="Plot of energy and internal resistance against voltage"
+            width="1200"
+            height="900"
+            loading="lazy"
+          />
+          <figcaption>
+            One cell in detail: energy (blue) and internal resistance (green)
+            against voltage.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="prose">
+        <h2>The longboard</h2>
+        <p>
+          I used the good cells to build an electric longboard. The throttle
+          is a phone app I wrote, which talks to a Bluetooth module on the
+          board.
+        </p>
+      </div>
+
+      <div class="figure-row">
+        <figure>
+          <img
+            src="../../img/bt-pack.webp"
+            alt="Battery pack being assembled in an aluminium box"
+            width="1400"
+            height="1050"
+            loading="lazy"
+          />
+          <figcaption>Assembling the pack.</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata" playsinline>
+            <source src="../../img/bt-longboard.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Test ride.</figcaption>
+        </figure>
+      </div>
+
+      <figure class="figure">
+        <img
+          src="../../img/bt-longboard.webp"
+          alt="The finished electric longboard"
+          width="1400"
+          height="1050"
+          loading="lazy"
+        />
+      </figure>
+
+      <p class="prose">
+        It looks like shit, but it taught me the basics of electronics,
+        soldering, app development and Arduino, and I rode it to work for a
+        whole summer.
+      </p>
+
+      <nav class="pager" aria-label="More projects">
+        <a href="../../projects/auto-planter/">
+          <span>Newer</span><strong>← Self-watering planter</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container container--narrow">
+        <span>© 2026 Erlend Framstad</span>
+      </div>
+    </footer>
   </body>
 </html>

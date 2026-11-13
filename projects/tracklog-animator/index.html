@@ -1,125 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Tracklog Animator - framstad.org</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/styles2.css" />
+    <title>Tracklog Animator · framstad.org</title>
+    <meta
+      name="description"
+      content="A tool that turns paragliding GPS tracklogs into animated overlays for flight videos."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../site.js"></script>
   </head>
   <body>
-    <div class="layout">
-      <nav class="nav">
-        <div class="nav-title">
-          <a href="/">framstad.org</a>
-        </div>
-        <ul class="nav-links">
-          <li><a href="/calculators/">Calculators</a></li>
-          <li><a href="/">Portfolio</a></li>
-          <li class="desktop-only">
-            <a href="/projects/tracklog-animator/" class="active"
-              >Tracklog Animator</a
-            >
-          </li>
-          <li class="desktop-only">
-            <a href="/work/">Professional Work</a>
-          </li>
-          <li class="desktop-only">
-            <a href="/projects/android-app/">Android App</a>
-          </li>
-          <li class="desktop-only">
-            <a href="/projects/battery-tester/">Battery Tester</a>
-          </li>
-          <li class="desktop-only">
-            <a href="/projects/auto-planter/">Self-Watering Planter</a>
-          </li>
-          <li><a href="/about/">About</a></li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <div class="container container--narrow">
+        <a class="brand" href="../../">framstad.org</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="../../about/">About</a>
+          <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.7 14.6A8.5 8.5 0 0 1 9.4 3.3a8.5 8.5 0 1 0 11.3 11.3z" /></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+          </button>
+        </nav>
+      </div>
+    </header>
 
-      <main class="content">
+    <main class="container container--narrow">
+      <a class="back-link" href="../../">← framstad.org</a>
+
+      <header class="project-header prose">
+        <p class="eyebrow">2025</p>
         <h1>Tracklog Animator</h1>
-
-        <p>
-          I coded a tool that turns a paragliding GPS tracklog into an
-          animation. You can overlay it on video to show live position and
-          altitude.
+        <p class="lead">
+          A tool I wrote that turns a paragliding GPS tracklog into an
+          animation. Laid over the flight video, it shows live position,
+          altitude and progress.
         </p>
+      </header>
 
-        <div class="video">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/p65YFcXJj4s"
-            title="Tracklog Animator demo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+      <a
+        class="video-embed"
+        href="https://www.youtube.com/watch?v=p65YFcXJj4s"
+        data-youtube="p65YFcXJj4s"
+        aria-label="Play the Tracklog Animator demo video"
+      >
+        <img src="../../img/tranim-hero.webp" alt="" width="1280" height="720" />
+        <span class="play" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z" /></svg>
+        </span>
+      </a>
+
+      <div class="prose">
+        <h2>What the overlay shows</h2>
+        <p>
+          The animation is built from a few separate elements, each meant to
+          keep the viewer oriented during the flight.
+        </p>
+      </div>
+
+      <div class="figure-row">
+        <figure>
+          <img
+            src="../../img/tranim-map.webp"
+            alt="Map overlay with the flight path and distances"
+            width="272"
+            height="331"
             loading="lazy"
-          >
-          </iframe>
-        </div>
+          />
+          <figcaption>
+            Map with position, path flown, heading, distance flown and
+            distance to goal.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../img/tranim-altitude.webp"
+            alt="Altitude gauge overlay"
+            width="200"
+            height="267"
+            loading="lazy"
+          />
+          <figcaption>
+            Altitude. Ground is at 900&nbsp;m, the pilot at 1770&nbsp;m above
+            sea level, climbing at 2&nbsp;m/s in rising air.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../img/tranim-date.webp"
+            alt="Country map with date and time overlay"
+            width="137"
+            height="286"
+            loading="lazy"
+          />
+          <figcaption>
+            Country map for geographic context, plus date and time.
+          </figcaption>
+        </figure>
+      </div>
 
-        <div class="wrap">
-          <p>
-            The animation visualizes data that helps the viewer stay oriented;
-            like position, path flown, heading, distance flown and distance to
-            goal:
-          </p>
-
-          <img
-            src="/img/projects/tranim4.png"
-            alt="Tracklog Animator preview"
-            style="border-radius: 6px; margin-bottom: 1rem"
-          />
-        </div>
-
-        <div class="wrap wrap--reverse">
-          <p>
-            It also shows altitude. On this screenshot 900 is the ground
-            elevation above sea level, 1770 m is the pilots altitude above sea
-            level, and 2 m/s tells us the pilot is in a vertical wind, causing
-            him to rise upwards at 2 m/s instead of decending.
-          </p>
-          <img
-            src="/img/projects/tranim2.png"
-            alt="Tracklog Animator preview"
-            style="border-radius: 6px; margin-bottom: 1rem"
-          />
-        </div>
-
-        <div class="wrap">
-          <p>
-            Lastly it shows a country map for geographical context, plus date
-            and time.
-          </p>
-          <img
-            src="/img/projects/tranim5.png"
-            alt="Tracklog Animator preview"
-            style="border-radius: 6px; margin-bottom: 1rem"
-          />
-        </div>
-        <div class="wrap--reverse">
-          <p>
-            The footage was shot with a 360&#176; camera mounted on my leg with
-            a 3D-printed camera mount.
-          </p>
-          <img
-            src="/img/projects/leg_mount1.jpg"
-            alt="Tracklog Animator preview"
-            style="border-radius: 6px; margin-bottom: 1rem; width: 200px"
-          />
-        </div>
-        <div class="wrap">
-          <p>Approximate setup when flying:</p>
-          <img
-            src="/img/projects/leg_mount2.jpg"
-            alt="Tracklog Animator preview"
-            style="border-radius: 6px; margin-bottom: 1rem; width: 200px"
-          />
-        </div>
+      <div class="prose">
+        <h2>Filming</h2>
         <p>
-          Everything in this project was done by me: coding, 3D-printing, and I
-          flew the paraglider.
+          The footage was shot with a 360° camera on a 3D-printed mount
+          strapped to my leg.
         </p>
-      </main>
-    </div>
+      </div>
+
+      <div class="figure-row">
+        <figure>
+          <img
+            src="../../img/leg-mount.webp"
+            alt="360 camera on a 3D-printed leg mount"
+            width="919"
+            height="1000"
+            loading="lazy"
+          />
+          <figcaption>The 3D-printed leg mount.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="../../img/leg-mount-flying.webp"
+            alt="The camera mount in flying position on the harness"
+            width="750"
+            height="1000"
+            loading="lazy"
+          />
+          <figcaption>Roughly how it sits when flying.</figcaption>
+        </figure>
+      </div>
+
+
+      <nav class="pager" aria-label="More projects">
+        <a class="next" href="../../projects/android-app/">
+          <span>Older</span><strong>Rank Everything Always →</strong>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container container--narrow">
+        <span>© 2026 Erlend Framstad</span>
+      </div>
+    </footer>
+
+    <script>
+      // Load the YouTube player only when the visitor clicks play.
+      // (YouTube refuses embeds on file:// pages, so there the link just opens YouTube.)
+      if (location.protocol !== "file:")
+      document.querySelectorAll("[data-youtube]").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const frame = document.createElement("iframe");
+          frame.src =
+            "https://www.youtube-nocookie.com/embed/" +
+            link.dataset.youtube +
+            "?autoplay=1";
+          frame.title = "Tracklog Animator demo";
+          frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+          frame.allowFullscreen = true;
+          const box = document.createElement("div");
+          box.className = "video-embed";
+          box.append(frame);
+          link.replaceWith(box);
+        });
+      });
+    </script>
   </body>
 </html>

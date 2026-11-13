@@ -1,0 +1,491 @@
+/* framstad.org — one small stylesheet, no build step. */
+
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --text: #1c1c1a;
+  --muted: #66655f;
+  --line: #e3e1da;
+  --accent: #a8461f;
+  --radius: 10px;
+  --measure: 42rem;
+  --wide: 60rem;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+
+/* Dark colours: used when the system prefers dark (unless the toggle chose light),
+   or whenever the toggle chose dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141412;
+    --surface: #1c1c19;
+    --text: #ebe9e3;
+    --muted: #a09e96;
+    --line: #2e2d29;
+    --accent: #e48a62;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #141412;
+  --surface: #1c1c19;
+  --text: #ebe9e3;
+  --muted: #a09e96;
+  --line: #2e2d29;
+  --accent: #e48a62;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.0625rem/1.65 var(--sans);
+  text-rendering: optimizeLegibility;
+}
+
+img,
+video,
+iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 650;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-top: 2.5rem;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+  width: 100%;
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding-inline: 1.25rem;
+}
+
+.container--narrow {
+  max-width: calc(var(--measure) + 2.5rem);
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4rem;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+.site-nav a[aria-current="page"] {
+  font-weight: 600;
+}
+
+/* Light/dark toggle: shows a moon in light mode, a sun in dark mode */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+.theme-toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+main {
+  padding-block: 3.5rem 4rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+/* ---------- Small text pieces ---------- */
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+/* ---------- Home: list of things, newest first ---------- */
+
+.intro {
+  margin-bottom: 2.5rem;
+}
+
+.log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.log a {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr 9.5rem;
+  grid-template-areas: "year text img";
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.log .year {
+  grid-area: year;
+  padding-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.log .text {
+  grid-area: text;
+}
+
+.log h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+}
+
+.log p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.975rem;
+}
+
+.log img {
+  grid-area: img;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.log a:hover h2 {
+  color: var(--accent);
+}
+
+@media (max-width: 36rem) {
+  .log a {
+    grid-template-columns: 1fr 6.5rem;
+    grid-template-areas:
+      "year img"
+      "text img";
+    gap: 0.25rem 1rem;
+  }
+}
+
+/* ---------- Project pages ---------- */
+
+.project-header {
+  margin-bottom: 2.5rem;
+}
+
+.figure {
+  margin: 2rem 0;
+}
+
+.figure img,
+.figure video {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+/* Diagrams with dark labels on a transparent background */
+.figure img.on-white {
+  background: #fff;
+}
+
+.figure figcaption,
+.figure-row figcaption,
+.gallery + .caption {
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* Several small figures side by side, wrapping on narrow screens */
+.figure-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.figure-row figure {
+  margin: 0;
+  flex: 1 1 9rem;
+  max-width: 17rem;
+}
+
+.figure-row img,
+.figure-row video {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  max-height: 20rem;
+  width: auto;
+}
+
+/* Horizontal strip of images. Scrolls sideways on its own, never the page. */
+.gallery {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 0.75rem;
+  margin: 2rem 0 0;
+  scrollbar-width: thin;
+}
+
+.gallery img {
+  flex: none;
+  height: var(--gallery-h, 18rem);
+  width: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  scroll-snap-align: start;
+}
+
+.gallery--tall {
+  --gallery-h: 30rem;
+}
+
+.gallery + .caption {
+  margin: 0 0 2rem;
+}
+
+@media (max-width: 40rem) {
+  .gallery {
+    --gallery-h: 14rem;
+  }
+  .gallery--tall {
+    --gallery-h: 24rem;
+  }
+}
+
+/* Click-to-load YouTube player: no third-party requests until clicked */
+.video-embed {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--line);
+}
+
+.video-embed img,
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+
+.video-embed .play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.6);
+  color: #fff;
+}
+
+.video-embed:hover .play {
+  background: var(--accent);
+}
+
+.video-embed .play svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: 0.2rem;
+}
+
+/* Previous / next at the bottom of project pages */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.pager a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.pager a:hover strong {
+  color: var(--accent);
+}
+
+.pager span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.pager .next {
+  text-align: right;
+  grid-column: 2;
+}
